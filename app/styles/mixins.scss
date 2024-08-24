@@ -1,0 +1,46 @@
+@import "variables";
+
+@mixin up($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($min-breakpoint, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($min-breakpoint, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+
+@mixin down($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($max-breakpoint, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($max-breakpoint, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+

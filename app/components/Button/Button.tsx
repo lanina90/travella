@@ -14,6 +14,7 @@ const ButtonBase = React.forwardRef<HTMLButtonElement, React.HTMLAttributes<HTML
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function UeniButtonBase(props, ref) {
   const {
+    buttonStyle,
     classes,
     shape,
     onMouseEnter,
@@ -34,6 +35,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function UeniBut
     className,
     noWrap,
     children,
+    disabled = false,
     render,
     ...rest
   } = props;
@@ -49,6 +51,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function UeniBut
       [ButtonStyles[`button-href`]]: !!href,
       [ButtonStyles[`button-full-width`]]: fullWidth,
       [ButtonStyles[`button-${shape}`]]: shape,
+      [ButtonStyles[`button-${buttonStyle}`]]: buttonStyle && !disabled,
+      [ButtonStyles[`button-root-disabled`]]: disabled,
     },
     className,
     classes?.root

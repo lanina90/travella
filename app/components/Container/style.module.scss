@@ -1,0 +1,15 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+
+.container{
+  &-with-vertical-padding{
+    padding-top: $mobile-16px;
+    padding-bottom: $mobile-16px;
+
+    @include up(md) {
+      padding-top: $desktop-16px;
+      padding-bottom: $desktop-16px;
+    }
+  }
+}

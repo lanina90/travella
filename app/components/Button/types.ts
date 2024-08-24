@@ -2,19 +2,18 @@ import React from "react";
 
 export type ButtonClassKey =
   | "root"
-  | "containedPrimary"
-  | "containedSecondary"
-  | "outlinedPrimary"
-  | "outlinedSecondary"
   | "text"
   | "startIcon"
   | "endIcon";
 
 export type ButtonShape = "rounded" | "circular" | "rectangular";
 export type ButtonLayout = "icon" | "icon-text" | "text" | "text-icon";
+export type ButtonStyle = "primary" | "secondary";
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   layout: ButtonLayout;
+  buttonStyle?: ButtonStyle;
+  disabled?: boolean
   shape: ButtonShape;
   classes?: Partial<Record<ButtonClassKey, string>>;
   noWrap?: boolean;

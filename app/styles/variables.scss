@@ -1,0 +1,84 @@
+
+
+$min-breakpoint: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$max-breakpoint: (
+  xs: 575px,
+  sm: 767px,
+  md: 991px,
+  lg: 1199px
+);
+
+$container-width: (
+  sm: 540px,
+  md: 750px,
+  lg: 960px,
+  xl: 1024px
+);
+
+
+$mobile-5px: 0.36714285715rem;
+$mobile-6px: 0.4285714285715rem;
+$mobile-8px: 0.5714285715rem;
+$mobile-10px: 0.715rem;
+$mobile-12px: 0.85714285715rem;
+$mobile-13px: 0.9285715rem;
+$mobile-14px: 1rem;
+$mobile-15px: 1.0714285715rem;
+$mobile-16px: 1.142857153rem;
+$mobile-17px: 1.214285715rem;
+$mobile-18px: 1.285715rem;
+$mobile-19px: 1.35714285715rem;
+$mobile-20px: 1.42857145rem;
+$mobile-22px: 1.5714285715rem;
+$mobile-24px: 1.714285715rem;
+$mobile-26px: 1.85714285715rem;
+$mobile-28px: 2rem;
+$mobile-30px: 2.14285715rem;
+$mobile-32px: 2.285714285715rem;
+$mobile-38px: 2.714285715rem;
+$mobile-42px: 3rem;
+$mobile-44px: 3.14285715rem;
+$mobile-46px: 3.285714285715rem;
+$mobile-48px: 3.4285715rem;
+
+$desktop-8px: 0.5rem;
+$desktop-9px: 0.5625rem;
+$desktop-10px: 0.625rem;
+$desktop-12px: 0.75rem;
+$desktop-14px: 0.875rem;
+$desktop-15px: 0.9375rem;
+$desktop-16px: 1rem;
+$desktop-17px: 1.0625rem;
+$desktop-18px: 1.125rem;
+$desktop-19px: 1.1875rem;
+$desktop-20px: 1.25rem;
+$desktop-21px: 1.3125rem;
+$desktop-22px: 1.375rem;
+$desktop-24px: 1.5rem;
+$desktop-26px: 1.625rem;
+$desktop-28px: 1.75rem;
+$desktop-29px: 1.8125rem;
+$desktop-30px: 1.875rem;
+$desktop-32px: 2rem;
+$desktop-34px: 2.125rem;
+$desktop-36px: 2.25rem;
+$desktop-38px: 2.375rem;
+$desktop-40px: 2.5rem;
+$desktop-44px: 2.75rem;
+$desktop-46px: 2.875rem;
+$desktop-48px: 3rem;
+$desktop-52px: 3.25rem;
+$desktop-60px: 3.75rem;
+$desktop-64px: 4rem;
+
+$z-index-top-bar: 1100;
+$z-index-top-bar-drawer: 1200;
+$z-index-shopping-cart-drawer: 1200;
+$z-index-cookie-message: 9999;

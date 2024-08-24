@@ -1,4 +1,16 @@
 .button {
+
+  &-primary {
+    background-image: linear-gradient(280deg, #ff5e40, #f7921e);
+  }
+
+  &-secondary {
+
+  }
+
+
+
+
   &-root {
     display: inline-flex;
     align-items: center;
@@ -12,6 +24,11 @@
     text-transform: capitalize;
     font-size: 18px;
     font-weight: 700;
+
+    &.button-root-disabled {
+      pointer-events: none;
+      background-color: darkgray;
+    }
   }
   &-no-wrap {
     white-space: nowrap;
