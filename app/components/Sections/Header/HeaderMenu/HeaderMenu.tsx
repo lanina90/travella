@@ -9,15 +9,19 @@ import MobileNavBar from "@/app/components/Sections/Header/HeaderMenu/MobileNavB
 import NavBar from "@/app/components/Sections/Header/HeaderMenu/NavBar";
 import useScreenClassContext from "@/app/hooks/useScreenClassContext";
 import Link from "next/link";
-import {Anchor} from "@/app/components/types/homeSections";
+import {Anchor} from "@/app/types/homeSections";
 
 
 const HeaderMenu = ({activeSection} : {activeSection: string}) => {
-  console.log("activeSection", activeSection)
+
   const [scrolled, setScrolled] = useState(false);
+
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const screenClass = useScreenClassContext();
 
-  const showMobileMenu = ["xs", "sm", "md"].includes(screenClass);
+  useEffect(() => {
+    setShowMobileMenu(["xs", "sm", "md"].includes(screenClass));
+  }, [screenClass]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +47,7 @@ const HeaderMenu = ({activeSection} : {activeSection: string}) => {
              fill/>
          </Link>
        </div>
-        {showMobileMenu ? <MobileNavBar/> : <NavBar activeSection={activeSection}/>}
+        {showMobileMenu ? <MobileNavBar activeSection={activeSection}/> : <NavBar activeSection={activeSection}/>}
       </SectionContainer>
     </header>
   );

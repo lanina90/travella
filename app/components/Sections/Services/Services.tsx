@@ -1,5 +1,5 @@
 import React from 'react';
-import {Anchor} from "@/app/components/types/homeSections";
+import {Anchor} from "@/app/types/homeSections";
 
 const Services = React.forwardRef<HTMLElement, {}>((props, ref) => {
   return (

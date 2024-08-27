@@ -9,7 +9,7 @@ import React, {useEffect, useRef, useState} from "react";
 import Services from "@/app/components/Sections/Services/Services";
 import Testimonials from "@/app/components/Sections/Testimonials/Testimonials";
 import ContactUs from "@/app/components/Sections/ContactUs/ContactUs";
-import {Anchor} from "@/app/components/types/homeSections";
+import {Anchor} from "@/app/types/homeSections";
 
 
 export default function Home() {

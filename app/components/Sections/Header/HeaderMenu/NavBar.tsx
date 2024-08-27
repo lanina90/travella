@@ -3,11 +3,11 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Link from "next/link";
-import { Anchor } from "@/app/components/types/homeSections";
+import { Anchor } from "@/app/types/homeSections";
 import Button from "@/app/components/Button/Button";
 
 interface NavBarProps {
-  activeSection: string;
+  activeSection?: string;
 }
 
 const NavBar: React.FC<NavBarProps>= ({ activeSection }) => {

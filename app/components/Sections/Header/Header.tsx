@@ -4,7 +4,7 @@ import Typography from "@/app/components/Typography/Typography";
 import HeaderForm from "@/app/components/Sections/Header/HeaderForm";
 import Container from "@/app/components/Container/Container";
 import Flex from "@/app/components/Flex/Flex";
-import {Anchor} from "@/app/components/types/homeSections";
+import {Anchor} from "@/app/types/homeSections";
 
 const Header = React.forwardRef<HTMLElement, {}>(({}, ref) => {
   return (

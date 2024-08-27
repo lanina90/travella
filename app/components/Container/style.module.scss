@@ -8,8 +8,8 @@
     padding-bottom: $mobile-16px;
 
     @include up(md) {
-      padding-top: $desktop-16px;
-      padding-bottom: $desktop-16px;
+      padding-top: $desktop-52px;
+      padding-bottom: $desktop-52px;
     }
   }
 }

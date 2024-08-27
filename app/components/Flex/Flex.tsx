@@ -5,6 +5,7 @@ import classNames from "classnames";
 
 interface FlexProps {
   children: any;
+  gap?: number;
   column?: boolean;
   grow?: number;
   shrink?: number;
@@ -18,6 +19,7 @@ interface FlexProps {
 
 const Flex = (props: FlexProps & any, forwardedRef) => {
   const {
+    gap,
     wrap,
     column,
     grow,
@@ -50,6 +52,7 @@ const Flex = (props: FlexProps & any, forwardedRef) => {
     () => ({
       flexGrow: grow ? 1 : undefined,
       flexShrink: shrink ? 1 : undefined,
+      gap: gap ?? undefined,
       ...style,
     }),
     [style, grow, shrink]
