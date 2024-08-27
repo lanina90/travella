@@ -1,18 +1,19 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Typography from "@/app/components/Typography/Typography";
-import HeaderForm from "@/app/components/Header/HeaderForm";
+import HeaderForm from "@/app/components/Sections/Header/HeaderForm";
 import Container from "@/app/components/Container/Container";
 import Flex from "@/app/components/Flex/Flex";
+import {Anchor} from "@/app/components/types/homeSections";
 
-const Header = () => {
+const Header = React.forwardRef<HTMLElement, {}>(({}, ref) => {
   return (
-    <section className={styles["header-container"]}>
-      <Container noVerticalPadding>
-        <video autoPlay muted loop className={styles["header-video"]}>
-          <source src="./video_1.mp4" type="video/mp4"/>
-          Your browser does not support the video tag.
-        </video>
+    <section id={Anchor.header} className={styles["header-container"]} ref={ref} >
+      <video autoPlay muted loop className={styles["header-video"]}>
+        <source src="./video_1.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+      <Container noVerticalPadding className={styles["header-content-wrapper"]}>
         <div className={styles["header-content"]}>
           <Flex direction="column" justifyContent="center">
             <Typography element="h1" className={styles["header-content-title"]}>
@@ -27,6 +28,6 @@ const Header = () => {
       </Container>
     </section>
   );
-};
+});
 
 export default Header;

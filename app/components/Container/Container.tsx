@@ -4,7 +4,7 @@ import {Container} from "@mui/system";
 import classNames from "classnames";
 
 
-const SectionContainer = (props, forwardedRef) => {
+const SectionContainer = (props) => {
   const { className, noVerticalPadding, ...rest } = props;
 
   const containerClassName = classNames(
@@ -13,7 +13,7 @@ const SectionContainer = (props, forwardedRef) => {
     !noVerticalPadding && styles["container-with-vertical-padding"]
   );
 
-  return <Container className={containerClassName} ref={forwardedRef} {...rest} />;
+  return <Container className={containerClassName} {...rest} />;
 };
 
 export default SectionContainer;

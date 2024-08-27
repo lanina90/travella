@@ -1,44 +1,48 @@
-@import "../../styles/mixins";
+@import "../../../styles/mixins";
 
-.header{
+.header {
 
-  &-video{
+  &-video {
     position: absolute;
-    top:0;
-    left:0;
-    width:100%;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: -1;
   }
 
-  &-container{
-    width:100%;
+  &-container {
+    width: 100%;
     position: relative;
-    display: flex;
-    align-items: center;
-    padding-top: 110px;
-    padding-bottom: 60px;
   }
 
-  &-content{
+  &-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     grid-auto-rows: auto;
 
+    @include up(md) {
+      grid-template-columns: minmax(300px, 1fr) minmax(300px, 400px);
+    }
 
-    &-title{
+    &-wrapper {
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+
+    &-title {
       font-size: $mobile-38px;
       color: var(--color--white);
       line-height: 0.9em;
 
       @include up(md) {
-        font-size: $desktop-52px;
+        font-size: $desktop-60px;
       }
     }
 
-    &-description{
+    &-description {
       font-size: $mobile-16px;
       color: var(--color--white);
       line-height: 1.2em;
@@ -50,18 +54,18 @@
     }
   }
 
-  &-form{
+  &-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 
-    &-container{
+    &-container {
       background-color: var(--color--white);
       padding: 20px;
       border-radius: 20px;
     }
 
-    &-title{
+    &-title {
       color: var(--color--black);
       text-transform: capitalize;
       font-size: 30px;

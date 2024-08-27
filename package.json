@@ -14,9 +14,11 @@
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
     "classnames": "^2.5.1",
+    "gsap": "^3.12.5",
     "next": "14.2.6",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-grid-system": "^8.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",

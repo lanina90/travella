@@ -12,7 +12,7 @@ const ButtonBase = React.forwardRef<HTMLButtonElement, React.HTMLAttributes<HTML
 });
 
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function UeniButtonBase(props, ref) {
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     buttonStyle,
     classes,
@@ -20,18 +20,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function UeniBut
     onMouseEnter,
     onMouseLeave,
     text,
-    startIconName = null,
     StartIconComponent,
-    startIconColor,
-    startIconSize,
-    endIconName = null,
     EndIconComponent,
-    endIconColor,
-    endIconSize,
     href,
     target,
     fullWidth,
-    layout,
+    layout = "text",
     className,
     noWrap,
     children,
@@ -64,22 +58,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function UeniBut
 
   const Component = href ? Link : ButtonBase;
 
-  const startIconStyle = useMemo(
-    () => ({
-      minHeight: startIconSize,
-      minWidth: startIconSize,
-    }),
-    [startIconSize]
-  );
-
-  const endIconStyle = useMemo(
-    () => ({
-      minHeight: endIconSize,
-      minWidth: endIconSize,
-    }),
-    [endIconSize]
-  );
-
   return (
     <Component
       {...({
@@ -88,7 +66,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function UeniBut
         onMouseEnter,
         onMouseLeave,
         className: rootClassName,
-        to: href,
+        href,
         target,
       } as any)}
     >
@@ -99,7 +77,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function UeniBut
       ) : (
         <React.Fragment>
           {startIconElement && (layout === "icon" || layout === "icon-text") ? (
-            <span className={startIconClassName} style={startIconStyle}>
+            <span className={startIconClassName}>
                 {startIconElement}
               </span>
           ) : null}
@@ -109,7 +87,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function UeniBut
           ) : null}
 
           {endIconElement && layout === "text-icon" ? (
-            <span className={endIconClassName} style={endIconStyle}>
+            <span className={endIconClassName}>
                 {endIconElement}
               </span>
           ) : null}
