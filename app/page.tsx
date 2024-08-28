@@ -23,30 +23,28 @@ export default function Home() {
   const destinationsRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const animateIn = (ref: React.RefObject<HTMLElement>) => {
-      gsap.fromTo(
-        ref.current,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: ref.current,
-            start: 'top 90%',
-            toggleActions: 'play none none reverse',
-          },
+    const createAnimation = (ref: React.RefObject<HTMLElement>) => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ref.current,
+          start: 'top 80%',
+          end: 'bottom top',
+          toggleActions: 'play none none reverse',
         }
+      });
+
+      timeline.fromTo(
+        ref.current,
+        { opacity: 0.2, y: 170 },
+        { opacity: 1, y: 0, duration: .7, ease: 'power3.out' }
       );
     };
 
-    animateIn(headerRef);
-    animateIn(aboutRef);
-    animateIn(servicesRef);
-    animateIn(testimonialsRef);
-    animateIn(contactsRef);
-    animateIn(destinationsRef);
+    createAnimation(aboutRef);
+    createAnimation(servicesRef);
+    createAnimation(testimonialsRef);
+    createAnimation(contactsRef);
+    createAnimation(destinationsRef);
   }, []);
 
   return (

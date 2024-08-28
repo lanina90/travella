@@ -23,6 +23,12 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 14px 14px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     &-image {
       z-index: -1;

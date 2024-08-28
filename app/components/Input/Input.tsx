@@ -7,7 +7,9 @@ const Input: React.FC<InputProps> = ({ datePicker, textarea, label, icon, id, cl
 
   const Tag = textarea ? "textarea" : "input"
 
-  const inputProps = textarea ? props as React.TextareaHTMLAttributes<HTMLTextAreaElement> : props as React.InputHTMLAttributes<HTMLInputElement>;
+  const inputProps = textarea
+    ? props as React.TextareaHTMLAttributes<HTMLTextAreaElement>
+    : props as React.InputHTMLAttributes<HTMLInputElement>;
 
   return (
     <div className={classNames(styles["container"], classes?.root)}>

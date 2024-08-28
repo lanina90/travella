@@ -64,7 +64,7 @@ const Destinations = React.forwardRef<HTMLElement, {}>((props, ref) => {
 
   return (
     <section ref={ref} id="#destination">
-      <SectionContainer>
+      <SectionContainer noVerticalPadding verticalPadding={80}>
         <Flex justifyContent="space-between" alignItems="center">
           <Typography element="h2">
             Popular Destination

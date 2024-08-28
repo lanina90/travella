@@ -1,4 +1,6 @@
-import React, { useCallback, useState } from "react";
+"use client"
+
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import { Anchor } from "@/app/types/homeSections";
 import SectionContainer from "@/app/components/Container/Container";
 import Typography from "@/app/components/Typography/Typography";
@@ -8,9 +10,14 @@ import Flex from "@/app/components/Flex/Flex";
 import { data } from "@/app/utils/data";
 import ServiceCard from "@/app/components/Sections/Services/ServiceCard";
 import ServicesTabs from "@/app/components/Sections/Services/ServicesTabs";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Services = React.forwardRef<HTMLElement, {}>((props, ref) => {
   const [activeTab, setActiveTab] = useState(ServicesTabsList.county);
+  const cardsRef = useRef<HTMLDivElement | null>(null);
 
   const handleTabChange = useCallback(
     (event, value) => {
@@ -18,6 +25,33 @@ const Services = React.forwardRef<HTMLElement, {}>((props, ref) => {
     },
     [setActiveTab]
   );
+
+  useEffect(() => {
+    if (cardsRef.current) {
+      const cards = cardsRef.current?.children;
+
+      if (cards) {
+        gsap.set(Array.from(cards), {
+          opacity: 0,
+        });
+
+        ScrollTrigger.create({
+          trigger: cardsRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          onEnter: () => {
+            gsap.to(Array.from(cards), {
+              opacity: 1,
+              duration: 1,
+              ease: 'power3.out',
+              stagger: 0.2,
+            });
+          },
+          toggleActions: 'play none none reverse',
+        });
+      }
+    }
+  }, [activeTab]);
 
   return (
     <section ref={ref} id={Anchor.services}>
@@ -27,7 +61,7 @@ const Services = React.forwardRef<HTMLElement, {}>((props, ref) => {
         </Typography>
         <Flex direction="column" gap={50} className={styles["service-content"]}>
           <ServicesTabs activeTab={activeTab} handleTabChange={handleTabChange} />
-          <div className={styles["service-cards"]}>
+          <div className={styles["service-cards"]} ref={cardsRef}>
             {activeTab === ServicesTabsList.county
               ? data.offers.county?.map(({ id, rating, title, img, price, location }) => (
                   <ServiceCard key={id} {...{ rating, title, img, price, location }} />

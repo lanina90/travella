@@ -7,7 +7,7 @@ import styles from "./styles.module.scss";
 const About = React.forwardRef<HTMLElement, {}>((props, ref) => {
   return (
     <section ref={ref} id={Anchor.about}>
-      <SectionContainer>
+      <SectionContainer noVerticalPadding verticalPadding={80}>
         <div className={styles["about-section-header"]}>
           <Typography element="h2" className={styles["about-section-title"]}>
             About Travel Agency
