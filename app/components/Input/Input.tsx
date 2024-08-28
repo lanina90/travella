@@ -3,7 +3,10 @@ import { InputProps } from "@/app/components/Input/types";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 
-const Input: React.FC<InputProps> = ({ label, icon, type = "text", id, classes, ...props }) => {
+const Input: React.FC<InputProps> = ({ textarea, label, icon, type = "text", id, classes, ...props }) => {
+
+  const Tag = textarea ? "textarea" : "input"
+
   return (
     <div className={classNames(styles["container"], classes?.root)}>
       {label && (
@@ -12,7 +15,7 @@ const Input: React.FC<InputProps> = ({ label, icon, type = "text", id, classes, 
         </label>
       )}
       <div className={styles["container-input-wrapper"]}>
-        <input
+        <Tag
           id={id}
           type={type}
           {...props}
