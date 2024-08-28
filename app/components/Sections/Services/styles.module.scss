@@ -8,6 +8,81 @@
 
 .service {
 
+  &-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  &-card {
+    position: relative;
+    aspect-ratio: 1/1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px 14px 20px;
+
+    &-image {
+      z-index: -1;
+      border-radius: 20px;
+    }
+
+    &-rating{
+      align-self: flex-end;
+      background-color: var(--color--gray-light);
+      border-radius: 100px;
+      width: 65px;
+      height: 30px;
+      font-size: 14px;
+      line-height: 140%;
+
+      &-image{
+        width: 25%;
+        margin-right: 5px;
+        object-fit: contain;
+      }
+
+      &-text {
+        font-family: var(--font-family--dm-sans);
+        color: var(--color--black);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 100%;
+    }
+  }
+
+    &-content {
+      background-color: var(--color--white);
+      border-radius: 20px;
+      padding: 15px;
+
+      &-title{
+        font-family: var(--font-family--dm-sans);
+        color: var(--color--black);
+        margin-top: 0;
+        font-size: 20px;
+        line-height: 110%;
+      }
+
+      &-location{
+        color: rgba(0, 0, 0, .8);
+        font-weight: 300;
+        display: block;
+        margin-bottom: 0;
+        margin-left: 10px;
+      }
+
+      &-price{
+        font-family: var(--font-family--dm-sans);
+        color: var(--color--orange);
+        font-weight: 500;
+      }
+
+    }
+  }
+
   &-tab {
     border-radius: 20px!important;
     background-color: rgba(255, 255, 255, .15)!important;

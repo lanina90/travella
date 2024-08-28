@@ -27,7 +27,12 @@ const ServicesTabs: React.FC<IServicesTabs> = ({ activeTab, handleTabChange}) =>
           backgroundImage: "linear-gradient(260deg, var(--color--orange), var(--color--yellow))",
         },
         ".MuiTabs-flexContainer": {
-          gap: 5,
+          gap: 3,
+          flexWrap: "wrap"
+        },
+        ".MuiButtonBase-root": {
+          minWidth: 130,
+          maxWidth: 200,
         },
       }}
     >

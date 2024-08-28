@@ -1,4 +1,4 @@
-type TOffer = {
+export type TOffer = {
   id: number;
   rating: number;
   title: string;
