@@ -3,10 +3,6 @@ import { Anchor } from "@/app/types/homeSections";
 import SectionContainer from "@/app/components/Container/Container";
 import Typography from "@/app/components/Typography/Typography";
 import styles from "./styles.module.scss";
-import ApprovalOutlinedIcon from "@mui/icons-material/ApprovalOutlined";
-import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
-import ReviewsOutlinedIcon from "@mui/icons-material/ReviewsOutlined";
-import Image from "next/image"
 
 const About = React.forwardRef<HTMLElement, {}>((props, ref) => {
   return (

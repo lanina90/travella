@@ -30,7 +30,6 @@ const NavBar: React.FC<NavBarProps>= ({ activeSection }) => {
         href={Anchor.contacts}
         shape="rounded"
         buttonStyle="primary"
-        className={activeSection === Anchor.contacts ? styles["link-active"] : undefined}
       >
         Contact us
       </Button>

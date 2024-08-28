@@ -69,7 +69,7 @@ const Destinations = React.forwardRef<HTMLElement, {}>((props, ref) => {
     <section ref={ref} id="#destination">
       <SectionContainer>
         <Flex justifyContent="space-between" alignItems="center">
-          <Typography element="h2" className={styles["destinations-section-title"]}>
+          <Typography element="h2">
             Popular Destination
           </Typography>
           {!isMobile && <Controls nextArrowClick={handleNextSlide} prevArrowClick={handlePrevSlide} />}

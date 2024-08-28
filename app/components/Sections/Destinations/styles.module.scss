@@ -3,13 +3,6 @@
 
 .destinations-section{
 
-  &-title{
-
-    @include up(md){
-      font-size: $desktop-40px;
-    }
-  }
-
   &-slider{
     height: 100%;
     margin-top: 50px;

@@ -1,3 +1,4 @@
+@import "styles/mixins.scss";
 
 :root {
   --color--black: black;
@@ -104,17 +105,33 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   color: var(--color--white);
   font-family: var(--font-dm-sans);
+  text-transform: capitalize;
 }
 
 h1 {
   font-size: 38px;
-  line-height: 44px;
+  line-height: 120%;
 }
 
 h2 {
   font-size: 32px;
-  line-height: 36px;
+  line-height: 110%;
+
+  @include up(md){
+    font-size: $desktop-44px;
+  }
 }
+.d-block{
+  display: block;
+}
+
+.heading-center{
+  text-align: center;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 h3 {
   font-size: 24px;

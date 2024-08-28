@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, DM_Sans } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Sections/Header/Header";
 import classNames from "classnames";
