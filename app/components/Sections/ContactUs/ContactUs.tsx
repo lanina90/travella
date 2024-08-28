@@ -65,7 +65,6 @@ const ContactUs = React.forwardRef<HTMLElement, {}>((props, ref) => {
             name="message"
             label="Message"
             placeholder="Enter your message"
-            type={"text"}
             classes={inputClasses}
           />
           <Button type="submit" shape="rounded" buttonStyle="primary" className={styles["contacts-form-button"]}>Send Message</Button>
