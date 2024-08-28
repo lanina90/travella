@@ -11,6 +11,7 @@ type InputPropsBase = {
   label?: string;
   icon?: React.ReactNode;
   classes?: Partial<Record<InputClassKey, string>>;
+  textarea?: boolean;
 };
 
 type TextareaProps = InputPropsBase & React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
@@ -18,6 +19,7 @@ type TextareaProps = InputPropsBase & React.TextareaHTMLAttributes<HTMLTextAreaE
 };
 
 type RegularInputProps = InputPropsBase & React.InputHTMLAttributes<HTMLInputElement> & {
+  type?: string;
   textarea?: false;
 };
 

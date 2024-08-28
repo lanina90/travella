@@ -18,13 +18,14 @@ export default function Home() {
   const servicesRef = useRef<HTMLElement | null>(null);
   const testimonialsRef = useRef<HTMLElement | null>(null);
   const contactsRef = useRef<HTMLElement | null>(null);
+  const destinationsRef = useRef<HTMLElement | null>(null);
 
   return (
     <>
       <HeaderMenu/>
       <main>
         <Header ref={headerRef}/>
-        <Destinations/>
+        <Destinations ref={destinationsRef}/>
         <About ref={aboutRef}/>
         <Services ref={servicesRef}/>
         <Testimonials ref={testimonialsRef}/>

@@ -16,7 +16,8 @@ const SectionContainer = (props) => {
   const containerStyles = useMemo(() => {
     return {
       ...style,
-      padding: verticalPadding ? `${verticalPadding}px 0` : undefined
+      paddingTop: verticalPadding ? `${verticalPadding}px` : undefined,
+      paddingBottom: verticalPadding ? `${verticalPadding}px` : undefined
     }
   }, [verticalPadding, style])
 
