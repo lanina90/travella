@@ -13,7 +13,7 @@ const Header = React.forwardRef<HTMLElement, {}>(({}, ref) => {
         <source src="./video_1.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
-      <Container noVerticalPadding className={styles["header-content-wrapper"]}>
+      <Container noVerticalPadding>
         <div className={styles["header-content"]}>
           <Flex direction="column" justifyContent="center">
             <Typography element="h1" className={styles["header-content-title"]}>

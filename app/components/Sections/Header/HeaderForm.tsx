@@ -23,11 +23,13 @@ const HeaderForm = () => {
           label={"Check in"}
           type="date"
           name="check-in"
+          datePicker
         />
         <Input
           label={"Check out"}
           type="date"
           name="check-out"
+          datePicker
         />
         <Input
           label={"Your Email"}
