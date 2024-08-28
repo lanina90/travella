@@ -12,7 +12,7 @@ import Link from "next/link";
 import {Anchor} from "@/app/types/homeSections";
 
 
-const HeaderMenu = ({activeSection} : {activeSection: string}) => {
+const HeaderMenu = () => {
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -47,7 +47,7 @@ const HeaderMenu = ({activeSection} : {activeSection: string}) => {
              fill/>
          </Link>
        </div>
-        {showMobileMenu ? <MobileNavBar activeSection={activeSection}/> : <NavBar activeSection={activeSection}/>}
+        {showMobileMenu ? <MobileNavBar/> : <NavBar/>}
       </SectionContainer>
     </header>
   );

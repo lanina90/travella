@@ -7,7 +7,7 @@ import styles from "./styles.module.scss"
 import NavBar from "@/app/components/Sections/Header/HeaderMenu/NavBar";
 import { gsap } from 'gsap';
 
-const MobileNavBar = ({activeSection} : {activeSection: string}) => {
+const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
@@ -39,7 +39,7 @@ const MobileNavBar = ({activeSection} : {activeSection: string}) => {
         <MenuIcon/>
       </Button>
       <div className={styles["nav-bar-mobile-expended"]} ref={menuRef}>
-        <NavBar activeSection={activeSection}/>
+        <NavBar/>
       </div>
     </div>
   );

@@ -2,37 +2,69 @@
 
 import React from "react";
 import styles from "./styles.module.scss";
-import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 import { Anchor } from "@/app/types/homeSections";
 import Button from "@/app/components/Button/Button";
 
-interface NavBarProps {
-  activeSection?: string;
-}
 
-const NavBar: React.FC<NavBarProps>= ({ activeSection }) => {
+const NavBar = () => {
 
   return (
     <nav className={styles["nav-bar"]}>
-      <Link href={Anchor.header} className={(activeSection ===  Anchor.header || !activeSection) ? styles["link-active"] : undefined}>
-        Home
-      </Link>
-      <Link href={Anchor.about} className={activeSection === Anchor.about ? styles["link-active"] : undefined}>
-        About
-      </Link>
-      <Link href={Anchor.services} className={activeSection === Anchor.services ? styles["link-active"] : undefined}>
-        Services
-      </Link>
-      <Link href={Anchor.testimonials} className={activeSection === Anchor.testimonials ? styles["link-active"] : undefined}>
-        Testimonials
-      </Link>
-      <Button
-        href={Anchor.contacts}
-        shape="rounded"
-        buttonStyle="primary"
+      <ScrollLink
+        to={Anchor.header}
+        smooth={true}
+        duration={500}
+        spy={true}
+        activeClass={styles["link-active"]}
       >
-        Contact us
-      </Button>
+        Home
+      </ScrollLink>
+      <ScrollLink
+        to={Anchor.about}
+        smooth={true}
+        duration={500}
+        offset={-90}
+        spy={true}
+        activeClass={styles["link-active"]}
+      >
+        About
+      </ScrollLink>
+      <ScrollLink
+        to={Anchor.services}
+        smooth={true}
+        duration={500}
+        offset={-50}
+        spy={true}
+        activeClass={styles["link-active"]}
+      >
+        Services
+      </ScrollLink>
+      <ScrollLink
+        to={Anchor.testimonials}
+        smooth={true}
+        duration={500}
+        offset={-20}
+        spy={true}
+        activeClass={styles["link-active"]}
+      >
+        Testimonials
+      </ScrollLink>
+      <ScrollLink
+        to={Anchor.contacts}
+        smooth={true}
+        duration={500}
+        offset={-90}
+        spy={true}
+        activeClass={styles["link-active"]}
+      >
+        <Button
+          shape="rounded"
+          buttonStyle="primary"
+        >
+          Contact us
+        </Button>
+      </ScrollLink>
     </nav>
   );
 };

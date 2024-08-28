@@ -7,9 +7,18 @@ export type InputClassKey =
   | "icon"
   | "input"
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+type InputPropsBase = {
   label?: string;
   icon?: React.ReactNode;
   classes?: Partial<Record<InputClassKey, string>>;
-  textarea?: boolean
-}
+};
+
+type TextareaProps = InputPropsBase & React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+  textarea: true;
+};
+
+type RegularInputProps = InputPropsBase & React.InputHTMLAttributes<HTMLInputElement> & {
+  textarea?: false;
+};
+
+export type InputProps = TextareaProps | RegularInputProps;

@@ -5,6 +5,8 @@ import styles from "./styles.module.scss";
 
 const Input: React.FC<InputProps> = ({ textarea, label, icon, type = "text", id, classes, ...props }) => {
 
+  const inputProps = textarea ? props : { ...props, type };
+
   const Tag = textarea ? "textarea" : "input"
 
   return (
@@ -17,11 +19,11 @@ const Input: React.FC<InputProps> = ({ textarea, label, icon, type = "text", id,
       <div className={styles["container-input-wrapper"]}>
         <Tag
           id={id}
-          type={type}
+          {...inputProps}
           {...props}
           className={classNames(
             styles["container-input"],
-            type === "date" && styles["container-input-date-picker"],
+            !textarea && type === "date" && styles["container-input-date-picker"],
             classes?.input
           )}
         />

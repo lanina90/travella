@@ -3,10 +3,9 @@ import styles from "./styles.module.scss";
 import SectionContainer from "@/app/components/Container/Container";
 import { Anchor } from "@/app/types/homeSections";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import Typography from "@/app/components/Typography/Typography";
 import Flex from "@/app/components/Flex/Flex";
-import Button from "@/app/components/Button/Button";
 
 const Footer = () => {
   return (
@@ -14,7 +13,7 @@ const Footer = () => {
       <SectionContainer>
         <div className={styles["footer-grid"]}>
           <Flex direction="column" gap={20}>
-            <Link href={Anchor.header}>
+            <Link href={Anchor.header} smooth={true} duration={500}>
               <Image
                 src={"https://cdn.prod.website-files.com/666001600530be8dd46480e1/66600f7a7288e52e8dd93cf3_logo.svg"}
                 alt="logo"
@@ -32,19 +31,19 @@ const Footer = () => {
             <Flex direction="column" gap={20}>
               <ul>
                 <li>
-                  <Link href={Anchor.header}>Home</Link>
+                  <Link to={Anchor.header} smooth={true} duration={500}>Home</Link>
                 </li>
                 <li>
-                  <Link href={Anchor.about}>About Us</Link>
+                  <Link to={Anchor.about} smooth={true} duration={500}>About Us</Link>
                 </li>
                 <li>
-                  <Link href={Anchor.services}>Services</Link>
+                  <Link to={Anchor.services} smooth={true} duration={500} offset={-90}>Services</Link>
                 </li>
                 <li>
-                  <Link href={Anchor.testimonials}>Testimonials</Link>
+                  <Link to={Anchor.testimonials} smooth={true} duration={500}>Testimonials</Link>
                 </li>
                 <li>
-                  <Link href={Anchor.contacts}>Contact Us</Link>
+                  <Link to={Anchor.contacts} smooth={true} duration={500}>Contact Us</Link>
                 </li>
               </ul>
             </Flex>

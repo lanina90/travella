@@ -21,7 +21,7 @@ const Services = React.forwardRef<HTMLElement, {}>((props, ref) => {
 
   return (
     <section ref={ref} id={Anchor.services}>
-      <SectionContainer>
+      <SectionContainer noVerticaPadding verticalPadding={80}>
         <Typography element="h2" className="heading-center">
           Go anywhere <span className="d-block">with our latest tour offers</span>
         </Typography>

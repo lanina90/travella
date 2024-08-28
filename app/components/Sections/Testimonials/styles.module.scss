@@ -1,9 +1,9 @@
 @import "../../../styles/mixins";
 
 .testimonials {
-
+  scroll-margin-top: 80px;
   &-container {
-    padding-top: 3.25rem;
+    padding-top: 4.25rem;
   }
 
   &-cards {
