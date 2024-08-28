@@ -1,0 +1,51 @@
+@import "../../../styles/mixins";
+
+.testimonials {
+
+  &-container {
+    padding-top: 3.25rem;
+  }
+
+  &-cards {
+    margin-top: 10px;
+
+    :global(.swiper) {
+      padding: 50px 0 30px !important;
+    }
+
+    :global(.swiper .swiper-pagination) {
+      position: relative !important;
+      top: 20px !important;
+    }
+
+    :global(.swiper-pagination-bullet) {
+      background-color: rgba(255, 255, 255, .4);
+      width: 10px;
+      height: 10px;
+    }
+
+    :global(.swiper-pagination-bullet-active) {
+      background-color: var(--color--orange);
+      width: 11px;
+      height: 11px;
+    }
+
+  }
+
+  &-card {
+    text-align: center;
+    background-color: rgba(255, 255, 255, .08);
+    border-radius: 20px;
+    padding: 30px;
+
+    &-image {
+      border-radius: 50px;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+
+    }
+  }
+}

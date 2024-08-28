@@ -6,7 +6,7 @@ export type TOffer = {
   price: number;
   img: string;
 };
-type TTestimonial = {
+export type TTestimonial = {
   id: number;
   name: string;
   feedback: string;

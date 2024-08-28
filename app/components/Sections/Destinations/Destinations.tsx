@@ -44,12 +44,9 @@ const Destinations = React.forwardRef<HTMLElement, {}>((props, ref) => {
         setSlidesToShow(2)
       } else if (["md", "lg"].includes(screenClass)){
         setSlidesToShow(4)
-      } else if (["lg"].includes(screenClass)){
-        setSlidesToShow(4)
       } else {
         setSlidesToShow(5)
       }
-
     }
   }, [screenClass]);
 
