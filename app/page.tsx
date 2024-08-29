@@ -28,7 +28,7 @@ export default function Home() {
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: ref.current,
-          start: 'top top',
+          start: 'top 80%',
           end: 'bottom 80%',
           toggleActions: 'play none none none',
         }
