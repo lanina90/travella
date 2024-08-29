@@ -1,70 +1,75 @@
 "use client";
 
-import React from "react";
+import React, {useState} from "react";
 import styles from "./styles.module.scss";
-import { Link as ScrollLink } from "react-scroll";
 import { Anchor } from "@/app/types/homeSections";
 import Button from "@/app/components/Button/Button";
-
+import {useSections} from "@/app/providers/SectionsProvider/SectionsProvider";
+import classNames from "classnames";
 
 const NavBar = () => {
+  const [activeLink, setActiveLink] = useState('header')
+  const refs = useSections();
+
+  const scrollToRef = (key, offset = 0) => {
+    const ref = refs[key];
+    if (ref && ref.current) {
+      const elementPosition = ref.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY;
+
+      window.scroll({
+        top: offsetPosition + offset,
+        behavior: "smooth",
+      });
+      ref.current.style.opacity = 1
+      setActiveLink(key)
+    }
+  };
 
   return (
     <nav className={styles["nav-bar"]}>
-      <ScrollLink
-        to={Anchor.header}
-        smooth={true}
-        duration={500}
-        spy={true}
-        activeClass={styles["link-active"]}
+      <a
+        href={Anchor.header}
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToRef('header');
+        }}
+        className={classNames({[styles["link-active"]]: activeLink === 'header'})}
+      >Home</a>
+      <a
+        href={Anchor.about}
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToRef('about', -90);
+        }}
+        className={classNames({[styles["link-active"]]: activeLink === 'about'})}
+      >About</a>
+      <a
+        href={Anchor.services}
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToRef('services', -90);
+        }}
+        className={classNames({[styles["link-active"]]: activeLink === 'services'})}
+      >Services</a>
+      <a
+        href={Anchor.testimonials}
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToRef('testimonials', -90);
+        }}
+        className={classNames({[styles["link-active"]]: activeLink === 'testimonials'})}
+      >Testimonials</a>
+      <Button
+        shape="rounded"
+        buttonStyle="primary"
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToRef('contacts', -90);
+        }}
       >
-        Home
-      </ScrollLink>
-      <ScrollLink
-        to={Anchor.about}
-        smooth={true}
-        duration={500}
-        offset={-90}
-        spy={true}
-        activeClass={styles["link-active"]}
-      >
-        About
-      </ScrollLink>
-      <ScrollLink
-        to={Anchor.services}
-        smooth={true}
-        duration={500}
-        offset={-50}
-        spy={true}
-        activeClass={styles["link-active"]}
-      >
-        Services
-      </ScrollLink>
-      <ScrollLink
-        to={Anchor.testimonials}
-        smooth={true}
-        duration={500}
-        offset={-20}
-        spy={true}
-        activeClass={styles["link-active"]}
-      >
-        Testimonials
-      </ScrollLink>
-      <ScrollLink
-        to={Anchor.contacts}
-        smooth={true}
-        duration={500}
-        offset={-90}
-        spy={true}
-        activeClass={styles["link-active"]}
-      >
-        <Button
-          shape="rounded"
-          buttonStyle="primary"
-        >
-          Contact us
-        </Button>
-      </ScrollLink>
+        Contact us
+      </Button>
     </nav>
   );
 };

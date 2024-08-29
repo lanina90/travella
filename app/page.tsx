@@ -11,6 +11,7 @@ import React, {useEffect, useRef} from "react";
 import Services from "@/app/components/Sections/Services/Services";
 import Testimonials from "@/app/components/Sections/Testimonials/Testimonials";
 import ContactUs from "@/app/components/Sections/ContactUs/ContactUs";
+import {SectionsProvider} from "@/app/providers/SectionsProvider/SectionsProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +29,7 @@ export default function Home() {
         scrollTrigger: {
           trigger: ref.current,
           start: 'top top',
-          end: 'bottom top',
+          end: 'bottom 80%',
           toggleActions: 'play none none none',
         }
       });
@@ -48,17 +49,24 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <HeaderMenu/>
+    <SectionsProvider refs={{
+      header: headerRef,
+      about: aboutRef,
+      services: servicesRef,
+      testimonials: testimonialsRef,
+      contacts: contactsRef,
+      destinations: destinationsRef,
+    }}>
+      <HeaderMenu />
       <main>
-        <Header ref={headerRef}/>
-        <Destinations ref={destinationsRef}/>
-        <About ref={aboutRef}/>
-        <Services ref={servicesRef}/>
-        <Testimonials ref={testimonialsRef}/>
-        <ContactUs ref={contactsRef}/>
+        <Header ref={headerRef} />
+        <Destinations ref={destinationsRef} />
+        <About ref={aboutRef} />
+        <Services ref={servicesRef} />
+        <Testimonials ref={testimonialsRef} />
+        <ContactUs ref={contactsRef} />
       </main>
-      <Footer/>
-    </>
+      <Footer />
+    </SectionsProvider>
   );
 }

@@ -1,5 +1,7 @@
-import {HTMLAttributes} from "react";
+import React, {HTMLAttributes} from "react";
 
-export interface TypographyProps extends Partial<HTMLAttributes<HTMLDivElement>> {
-  element?: string;
+export interface TypographyProps extends HTMLAttributes<HTMLElement> {
+  element?: keyof JSX.IntrinsicElements;
+  children: React.ReactNode
 }
+

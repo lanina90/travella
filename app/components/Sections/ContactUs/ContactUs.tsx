@@ -61,7 +61,11 @@ const ContactUs = React.forwardRef<HTMLElement, {}>((props, ref) => {
           </div>
           <label>
             <div className={inputClasses.label}>Message</div>
-            <textarea name="message" id="message" cols="30" rows="10" className={inputClasses.input} placeholder="Enter your message"></textarea>
+            <textarea
+              name="message"
+              id="message"
+              className={inputClasses.input}
+              placeholder="Enter your message"></textarea>
           </label>
 
           <Button type="submit" shape="rounded" buttonStyle="primary" className={styles["contacts-form-button"]}>
