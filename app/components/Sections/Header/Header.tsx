@@ -10,7 +10,7 @@ const Header = React.forwardRef<HTMLElement, {}>(({}, ref) => {
   return (
     <section id={Anchor.header} className={styles["header-container"]} ref={ref} >
       <video autoPlay muted loop className={styles["header-video"]}>
-        <source src="./video_1.mp4" type="video/mp4"/>
+        <source src="./video.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
       <Container noVerticalPadding>
