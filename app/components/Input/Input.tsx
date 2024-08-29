@@ -7,10 +7,6 @@ const Input: React.FC<InputProps> = ({ datePicker, textarea, label, icon, id, cl
 
   const Tag = textarea ? "textarea" : "input"
 
-  const inputProps = textarea
-    ? props as React.TextareaHTMLAttributes<HTMLTextAreaElement>
-    : props as React.InputHTMLAttributes<HTMLInputElement>;
-
   return (
     <div className={classNames(styles["container"], classes?.root)}>
       {label && (
@@ -21,7 +17,7 @@ const Input: React.FC<InputProps> = ({ datePicker, textarea, label, icon, id, cl
       <div className={styles["container-input-wrapper"]}>
         <Tag
           id={id}
-          {...inputProps}
+          {...props}
           className={classNames(
             styles["container-input"],
             !textarea && datePicker && styles["container-input-date-picker"],
