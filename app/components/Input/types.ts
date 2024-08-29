@@ -1,5 +1,4 @@
 import React from "react";
-import {ButtonClassKey} from "@/app/components/Button/types";
 
 export type InputClassKey =
   | "root"
@@ -7,20 +6,10 @@ export type InputClassKey =
   | "icon"
   | "input"
 
-type InputPropsBase = {
+export type InputProps = {
   label?: string;
   icon?: React.ReactNode;
   classes?: Partial<Record<InputClassKey, string>>;
   textarea?: boolean;
   datePicker?: boolean;
 };
-
-type TextareaProps = InputPropsBase & React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
-  textarea: true;
-};
-
-type RegularInputProps = InputPropsBase & React.InputHTMLAttributes<HTMLInputElement> & {
-  textarea?: false;
-};
-
-export type InputProps = TextareaProps | RegularInputProps;

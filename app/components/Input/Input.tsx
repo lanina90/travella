@@ -3,9 +3,7 @@ import { InputProps } from "@/app/components/Input/types";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 
-const Input: React.FC<InputProps> = ({ datePicker, textarea, label, icon, id, classes, ...props }) => {
-
-  const Tag = textarea ? "textarea" : "input"
+const Input: React.FC<InputProps> = ({ datePicker, label, icon, id, classes, ...props }) => {
 
   return (
     <div className={classNames(styles["container"], classes?.root)}>
@@ -15,12 +13,12 @@ const Input: React.FC<InputProps> = ({ datePicker, textarea, label, icon, id, cl
         </label>
       )}
       <div className={styles["container-input-wrapper"]}>
-        <Tag
+        <input
           id={id}
           {...props}
           className={classNames(
             styles["container-input"],
-            !textarea && datePicker && styles["container-input-date-picker"],
+            datePicker && styles["container-input-date-picker"],
             classes?.input
           )}
         />

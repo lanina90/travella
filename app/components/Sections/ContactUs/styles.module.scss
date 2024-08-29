@@ -47,6 +47,7 @@
       background-color: rgba(255, 255, 255, .2);
       padding: 12px;
       width:100%;
+      border-radius: 20px;
 
       @include up(md) {
         padding: 18px 14px;
