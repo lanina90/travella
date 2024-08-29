@@ -7,6 +7,7 @@ export type InputClassKey =
   | "input"
 
 export type InputProps = {
+  id: string,
   label?: string;
   icon?: React.ReactNode;
   classes?: Partial<Record<InputClassKey, string>>;
